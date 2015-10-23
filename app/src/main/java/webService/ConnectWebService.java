@@ -78,6 +78,7 @@ public class ConnectWebService {
                     public void onResponse(JSONArray response) {
 
                         pDialog.hide();
+                        Toast.makeText(activity, "response=" + response, Toast.LENGTH_LONG).show();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -108,6 +109,7 @@ public class ConnectWebService {
             public void onResponse(String response) {
 
                 pDialog.hide();
+                Toast.makeText(activity, "response=" + response, Toast.LENGTH_LONG).show();
 
             }
         }, new Response.ErrorListener() {

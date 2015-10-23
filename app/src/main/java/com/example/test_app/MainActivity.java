@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
   String response;
     ProgressDialog pDialog;
     String URL = "http://app.mangalorecitypolice.com/fir_api";
-    MyAsynTask myAsynTask;
+
     StringBuilder content = new StringBuilder();
     File file;
     ImageLoader imageLoader;
@@ -66,12 +66,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
          connectWebService=new ConnectWebService();
+        connectWebService.stringGetRequest("http://192.168.2.238/smart_complaint/AllAtatus.php?&tablename=mnpotable&start=0&end=10",this);
 
-        //connectWebService.postRequest_File("http://192.168.2.238/UploadToServer.php", this, params);
+       // connectWebService.postRequest_File("http://192.168.2.238/UploadToServer.php", this, params);
 
-        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-        photoPickerIntent.setType("image/*");
-        startActivityForResult(photoPickerIntent, 123);
+       /* Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image*//*");
+        startActivityForResult(photoPickerIntent, 123);*/
 
 
         /*MultipartEntity reqEntity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);

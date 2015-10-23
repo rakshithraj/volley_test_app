@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -19,12 +20,13 @@ public class CustomStringRequest extends Request<String> {
 
     private Response.Listener<String> listener;
     private Map<String, String> params;
-
+    ArrayList<Integer> roadCount= new ArrayList<Integer>();
     public CustomStringRequest(String url, Map<String, String> params,
                                   Response.Listener<String> reponseListener, Response.ErrorListener errorListener) {
         super(Method.GET, url, errorListener);
         this.listener = reponseListener;
         this.params = params;
+       
     }
 
     public CustomStringRequest(int method, String url, Map<String, String> params,
